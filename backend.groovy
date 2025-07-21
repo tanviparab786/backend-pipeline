@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools{
-        maven maven3.9.8
+        maven 'maven3.9.8'
     }
     stages{
         stage('pulling code from repository'){
