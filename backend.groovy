@@ -18,7 +18,7 @@ pipeline{
         stage('deploy'){
             steps{
 
-                sshagent(['test']) {
+                sshagent(['tomcat-server']) {
                  sh 'scp target/*war azureuser@10.1.0.5:/opt/tomcat/webapps'
                  sh 'ssh -o StrictHostKeyChecking=no azureuser@10.1.0.5 "sudo mv demo-0.0.1-SNAPSHOT.war /opt/tomcat/webapps/test.war"'
 
